@@ -35,6 +35,6 @@ When you are done, make sure ...
 * [GitHub API][github-api]
 * [Useful API's][api-list]
 
-[github-api]: http://developer.github.com/v3/libraries/
+[github-api]: http://developer.github.com/v3/
 [api-list]: http://www.programmableweb.com/
 
