@@ -1,3 +1,8 @@
-## Using the 'X' API
+## CryptSeer.com
+Simple Cryptocoin tools and perhaps more...
 
-.... write your tutorial here ....
+## Using the 'Cryptsy' API  
+
+https://www.cryptsy.com/pages/api  
+
+by Ricardo A. Rubio
