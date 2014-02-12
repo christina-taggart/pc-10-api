@@ -1,18 +1,23 @@
+require 'etsy'
+Etsy.api_key = 'uy7w21xtzhbm257qdcft7pmg'
+
+enable :sessions
+
 get '/' do
-  # Look in app/views/index.erb
-  erb :index
+  request_token = Etsy.request_token
+  session[:request_token]  = request_token.token
+  session[:request_secret] = request_token.secret
+  redirect Etsy.verification_url
 end
 
-get '/bands' do
-  @band_names = Band.all.map(&:name)
-  erb :bands
+get '/authorize' do
+  access_token = Etsy.access_token(
+    session[:request_token],
+    session[:request_secret],
+    params[:oauth_verifier]
+  )
+  # access_token.token and access_token.secret can now be saved for future API calls
 end
 
-post '/bands' do
-  new_band = Band.create!(name: params[:name])
-  new_band.name
-end
+GET https://openapi.etsy.com/v2/listings/active?api_key={uy7w21xtzhbm257qdcft7pmg}
 
-get '/info' do
-  Demo.new(self).info
-end
