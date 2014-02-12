@@ -2,7 +2,13 @@ get '/' do
   # Look in app/views/index.erb
   response = HTTParty.get("https://openapi.etsy.com/v2/listings/active?api_key=#{ENV['ETSY_KEY']}")
 
-  @titles = response.parsed_response["results"].map { |listing| listing["title"] }
+  @listings = response.parsed_response["results"].map do |listing| 
+  	new_listing = {
+  		title: listing["title"] ,
+  		views: listing["views"] ,
+  		url: listing["url"] 
+  	}
+  end
 
   erb :index
 end

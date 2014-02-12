@@ -3,8 +3,8 @@
 
   <h2>Displaying 25 most recent items posted to Etsy</h2>
   <ol>
-  <% @titles.each do |title| %>
-  <li><%= title %></li>
+  <% @listings.each do |listing| %>
+  <li><%= listing[:title] %> (<a href="<%= listing[:url] %>">link</a>) <span>views: <%= listing[:views] %></span></li>
   <% end %>
   </ol>
 </div>
