@@ -1,3 +1,15 @@
+body {
+  background-color: rgb(242, 237, 224);
+}
+
+.current-doge-price {
+  margin: 20px auto;
+  border: 1px solid silver;
+  width: 400px;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+}
 .container {
   margin: 20px auto;
   width: 600px;
