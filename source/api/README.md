@@ -15,7 +15,13 @@ https://www.cryptsy.com/pages/api
 
 ### Using Cryptsy-API Ruby gem  
   
-https://github.com/nbarthel/cryptsy-api
+https://github.com/nbarthel/cryptsy-api  
+
+## Database Schema 
+
+![database schema](http://i1.minus.com/ibazejnJMECRx4.png "Keep It Simple Stupid!")  
+
+http://en.wikipedia.org/wiki/Keep_it_simple_stupid
 
 ## Things to watch out for
 ### Cross-site AJAX Requests
