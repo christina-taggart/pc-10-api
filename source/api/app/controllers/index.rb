@@ -11,6 +11,12 @@ post '/songs' do
 	erb :songs
 end
 
+post '/genre' do 
+	p params
+	@tracks = CLIENT.get('/tracks', :limit => 10, :genre=> params[:genre])
+	erb :songs
+end
+
 
 # client ID:  ef21557fb8bac5d96f80e45064d414a2
 # Secret Key:  27564fd5fb4006639697873dc1393fb7
