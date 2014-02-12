@@ -5,6 +5,24 @@
   border: 1px dotted black;
 }
 
+html { 
+  height: 600px; 
+}
+      
+body { 
+  height: 100%; 
+  margin: 30px; 
+  padding: 0; 
+  border: 18px solid #E6B800; 
+  border-style: groove; 
+  background-color: #990000;
+}
+      
+#map-canvas { 
+  height: 600px; 
+}
+
+
 th {
   text-align: left;
 }
