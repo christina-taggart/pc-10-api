@@ -1,8 +1,18 @@
-## CryptSeer.com
+# CryptSeer.com
 Simple Cryptocoin tools and perhaps more...
 
-## Using the 'Cryptsy' API  
+## Dependencies
+### Using the 'Cryptsy' API  
 
 https://www.cryptsy.com/pages/api  
 
-by Ricardo A. Rubio
+### Using Cryptsy-API Ruby gem  
+  
+https://github.com/nbarthel/cryptsy-api
+
+## Things to watch out for
+### Cross-site AJAX Requests
+Don't do it! CORS will bite you. Use Net::HTTP, HTTParty, or just the Cryptsy-API Ruby gem instead.
+
+Read more about it here: http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+
