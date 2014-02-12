@@ -8,3 +8,7 @@
 th {
   text-align: left;
 }
+
+#stalkee {
+  display: none;
+}
