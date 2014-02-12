@@ -1,12 +1,13 @@
 <div class="container">
-  <h1>GitHub Stalker!</h1>
+  <div id="initial_search">
+    <h1>GitHub Stalker!</h1>
 
-  <h2>Who are you stalking?</h2>
-  <form id="stalker" name="github_user_search" action="/users" method="get">
-    GitHub Username: <input class ="username" type="text" name="username">
-    <input type="submit" value="stalk">
-  </form>
-
+    <h2>Who are you stalking?</h2>
+    <form id="stalker" name="github_user_search" action="/users" method="get">
+      GitHub Username: <input class ="username" type="text" name="username">
+      <input type="submit" value="stalk">
+    </form>
+  </div>
   <div id="stalkee">
     <p>You are now stalking {{name}}!  Here are some things you probably want to know...</p>
     <ul>
