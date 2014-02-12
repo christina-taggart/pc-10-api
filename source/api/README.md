@@ -56,5 +56,9 @@ Don't do it! CORS will bite you.
   
 Use Net::HTTP, HTTParty, or just the Cryptsy-API Ruby gem instead.
 
-Read more about it here: http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+Read more about it here: http://en.wikipedia.org/wiki/Cross-origin_resource_sharing  
+  
+## Here is what the website looks like:  
+
+![this dogecoin website](http://i1.minus.com/ibbs7QpjSigST9.png)
 
