@@ -5,14 +5,13 @@ $(document).ready(function() {
   })
 });
 
-getUserDataFromGitHub = function() {
-  $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
-    modifyView(response);
-  })
+// ViewModifier object
+ViewModifier = function () {
+  this.template = document.getElementById('stalkee').innerHTML;
+  this.newInfo = 0;
 }
 
-modifyView = function(response) {
-  var template = document.getElementById('stalkee').innerHTML;
+ViewModifier.prototype.fetchNewInfo = function(response) {
   var newInfo = {
     name: response.name,
     location: response.location,
@@ -20,5 +19,13 @@ modifyView = function(response) {
     followers: response.followers,
     avatar_url: response.avatar_url
   };
-  $('#stalker').append(Mustache.render(template, newInfo));
+  return newInfo;
+}
+
+getUserDataFromGitHub = function() {
+    view = new ViewModifier ();
+  $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
+    view.newInfo = view.fetchNewInfo(response);
+    $('#stalker').append(Mustache.render(view.template, view.newInfo));
+  })
 }
