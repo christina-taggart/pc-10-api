@@ -1,14 +1,11 @@
 <div class="current-doge-price">
-  <h1>Current DOGE Price</h1>
+  <h1>Current DOGE Price <%= @secret_fail_msg %></h1>
   <h2><%= @last_trade_price %> BTC</h2>
   <h3>As of <%= @last_trade_time %> EST</h3>
 </div>
 
-
-<button id="doge-btc-market">Get DOGE/BTC Market Info</button>
-
-<div>
+<!-- <div>
   <br>
   <br>
   <%= @market_data %>
-</div>
+</div> -->
