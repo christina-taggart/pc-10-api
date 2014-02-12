@@ -1,23 +1,6 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, <%= em("world!") %></p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+Here's a recently uploaded picture <br>
+<a href="<%= @photo_url %>"> <%= @photo_url %></a><br>
+Here's a flickr user profile<br>
+<a href="<%= @random_user_url %>"><%= @random_user_url %></a><br>
+Here's a random flickr user's name, try not to stalk...<br>
+<%= @random_username %>
