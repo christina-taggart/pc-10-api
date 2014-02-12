@@ -8,6 +8,21 @@ such profit!
 much amaze!  
 definitely not a ponzi!  
 
+## Overview  
+### How it all works  
+  
+We use the coinbase api to get the current spot price of 1 bitcoin. (the current going price of 1 bitcoin in USD)  
+  
+We pull current DOGE/BTC market data from Cryptsy.  
+
+With both pieces of data, we can calculate the value of 1 DOGE in terms of USD.  
+
+We save trade, market, and exchange rate data in the database so that we can retrieve data if one of the API fails or their service is overloaded (quite common).  
+
+The code is messy, but the goal is a working MVP by 11-2-14 23:59 PST.  
+
+Main competitor is http://www.dogetools.com/calc/  
+
 ## Dependencies
 ### Using the 'Cryptsy' API  
 
@@ -16,6 +31,10 @@ https://www.cryptsy.com/pages/api
 ### Using Cryptsy-API Ruby gem  
   
 https://github.com/nbarthel/cryptsy-api  
+
+### Using Coinbase API  
+
+https://coinbase.com/api/doc/1.0/prices/spot_rate.html
 
 ## Database Schema 
 
