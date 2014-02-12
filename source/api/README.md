@@ -5,7 +5,7 @@ how money!
 such profit!    
 much amaze!  
 definitely not a ponzi!  
-  
+
 ![dogecoin logo](http://i2.minus.com/iHZZfPu6d8qpF.png "To the moon!")
 
 ## Dependencies
@@ -19,7 +19,11 @@ https://github.com/nbarthel/cryptsy-api
 
 ## Things to watch out for
 ### Cross-site AJAX Requests
-Don't do it! CORS will bite you. Use Net::HTTP, HTTParty, or just the Cryptsy-API Ruby gem instead.
+Don't do it! CORS will bite you.  
+
+![alligators](http://i3.minus.com/ibuNfX6paonaHz.jpg)  
+  
+Use Net::HTTP, HTTParty, or just the Cryptsy-API Ruby gem instead.
 
 Read more about it here: http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 
