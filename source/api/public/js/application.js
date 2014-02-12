@@ -29,9 +29,14 @@ function geoCoder(location){
 
 function eventListeners(){
   $('#search button').click(function(){
-    geoCoder($('input').val())
-    $('#search').hide()
-  })
+    geoCoder($('input').val());
+    $('#search').hide();
+    $('.search-again').show()
+  });
+
+  $('#search-button').click(function() {
+    geoCoder($('#search-input').val())
+  });
 }
 
 function fetchTrending(coords){

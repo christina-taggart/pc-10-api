@@ -4,7 +4,7 @@ helpers do
     coords = coords.join(", ")
     venues = CLIENT.trending_venues(coords, radius: 10000, limit: 20).venues
     if venues.length < 10
-      venues = CLIENT.trending_venues(coords, radius: 20000, limit: 20).venues
+      venues += CLIENT.trending_venues(coords, radius: 20000, limit: (20-venues.length)).venues
     end
     venues.each do |venue|
       name = venue.name

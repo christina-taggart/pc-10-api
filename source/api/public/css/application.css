@@ -15,6 +15,7 @@ html, body, #map-canvas{
   z-index: 5000;
 }
 
+
 #search input{
   margin: 10em auto 0 auto;
   width: 19.5em;
@@ -29,4 +30,20 @@ html, body, #map-canvas{
   display: block;
   margin: 2em auto;
   z-index: 5050;
+}
+
+.search-again{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 1em;
+  left: 5em;
+  width: 20em;
+  height: 2em;
+}
+
+#search-button{
+  width: 5em;
+  height: 2em;
+  margin-left: 22em;
 }
