@@ -3,23 +3,25 @@
     <h1>GitHub Stalker!</h1>
 
     <h2>Who are you stalking?</h2>
-    <form id="stalker" name="github_user_search" action="/users" method="get">
+    <form id="stalker">
       GitHub Username: <input class ="username" type="text" name="username">
       <input type="submit" value="stalk">
     </form>
   </div>
-  <div id="stalkee">
-    <p>You are now stalking {{name}}!  Here are some things you probably want to know...</p>
-    <ul>
-      {{#location}}
-        <li>{{name}} lives in {{location}}!</li>
-      {{/location}}
-      {{^location}}
-        <li>{{name}} doesn't want to tell you where (s)he lives!</li>
-      {{/location}}
-      <li>Check out {{name}}'s repos <a href="{{repos_url}}">here</a></li>
-      <li>{{name}} has {{followers}} followers.</li>
-    </ul>
-    <img src="{{avatar_url}}">
+  <div id="template">
+    <div id="stalkee">
+      <p>You are now stalking {{name}}!  Here are some things you probably want to know...</p>
+      <ul>
+        {{#location}}
+          <li>{{name}} lives in {{location}}!</li>
+        {{/location}}
+        {{^location}}
+          <li>{{name}} doesn't want to tell you where (s)he lives!</li>
+        {{/location}}
+        <li>Check out {{name}}'s repos <a href="{{repos_url}}">here</a></li>
+        <li>{{name}} has {{followers}} followers.</li>
+      </ul>
+      <img src="{{avatar_url}}">
+    </div>
   </div>
 </div>

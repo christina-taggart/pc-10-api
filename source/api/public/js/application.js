@@ -1,17 +1,30 @@
 $(document).ready(function() {
   $('#stalker').on("submit", function(event) {
     event.preventDefault();
+    removePreviousPerson();
     getUserDataFromGitHub();
   })
 });
 
-// ViewModifier object
-ViewModifier = function () {
-  this.template = document.getElementById('stalkee').innerHTML;
-  this.newInfo = 0;
+getUserDataFromGitHub = function() {
+  view = new ViewModifier ();
+  $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
+    view.newInfo = view.determineNewInfo(response);
+    $('#initial_search').append(Mustache.render(view.template, view.newInfo));
+  })
 }
 
-ViewModifier.prototype.fetchNewInfo = function(response) {
+removePreviousPerson = function() {
+  $('#initial_search #stalkee').remove();
+}
+
+// ViewModifier object
+ViewModifier = function () {
+  this.template = document.getElementById('template').innerHTML;
+  this.newInfo = null;
+}
+
+ViewModifier.prototype.determineNewInfo = function(response) {
   var newInfo = {
     name: response.name,
     location: response.location,
@@ -21,11 +34,24 @@ ViewModifier.prototype.fetchNewInfo = function(response) {
   };
   return newInfo;
 }
+// ==================================================================== //
 
-getUserDataFromGitHub = function() {
-    view = new ViewModifier ();
-  $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
-    view.newInfo = view.fetchNewInfo(response);
-    $('#stalker').append(Mustache.render(view.template, view.newInfo));
-  })
-}
+// GitHubUserDataFetcher object
+// GitHubUserDataFetcher = function () {
+//   this.userData = null;
+// }
+
+// GitHubUserDataFetcher.prototype.fetchNewData = function () {
+//   var stuffIWant = '';
+//   $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
+//     stuffIWant = response;
+//   })
+//   .done(function() {
+//     return stuffIWant;
+//   })
+// }
+
+// newData = new GitHubUserDataFetcher();
+// newData.userData = newData.fetchNewData();
+
+// ==================================================================== //
