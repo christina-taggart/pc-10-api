@@ -1,15 +1,15 @@
 $(document).ready(function() {
   $('#stalker').on("submit", function(event) {
     event.preventDefault();
-    $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
-      modifyView(response);
-      debugger
-    })
-    // $.get("https://api.github.com/users/" + $('.username').val() + "/following", function(response) {
-    //   debugger
-    // })
+    getUserDataFromGitHub();
   })
 });
+
+getUserDataFromGitHub = function() {
+  $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
+    modifyView(response);
+  })
+}
 
 modifyView = function(response) {
   var template = document.getElementById('stalkee').innerHTML;
@@ -22,9 +22,3 @@ modifyView = function(response) {
   };
   $('#stalker').append(Mustache.render(template, newInfo));
 }
-
-
-// $.get( "ajax/test.html", function( data ) {
-//   $( ".result" ).html( data );
-//   alert( "Load was performed." );
-// });
