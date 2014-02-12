@@ -1,7 +1,14 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#stalker').on("submit", function(event) {
+    event.preventDefault();
+    $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
+      console.log(response);
+    })
+  })
 });
+
+
+// $.get( "ajax/test.html", function( data ) {
+//   $( ".result" ).html( data );
+//   alert( "Load was performed." );
+// });
