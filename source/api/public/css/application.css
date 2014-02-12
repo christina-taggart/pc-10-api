@@ -1,10 +1,78 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em; 
+  letter-spacing: 1 px;
 }
 
-th {
-  text-align: left;
+.container {
+  margin: 20px auto;
+  min-width: 480px;
+  padding: 0px 20px 20px 20px;
+  width: 50%;
 }
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1em;
+  color: gray;
+  text-align: center;
+}
+
+form {
+  display: block;
+  margin: 30px auto 80px auto;
+  width: 400px;
+}
+
+input[type="text"] {
+  width:300px;
+}
+
+input[type="radio"] {
+  margin-left: 15px;
+}
+
+.food {
+  margin: 40px auto 80px auto;
+  width: 80%;
+  text-align: center;
+}
+
+.food-name {
+  border-bottom: 1px solid black;
+  color: black;
+  font-size: 1.6em;
+}
+
+.serving-size {
+  color: gray;
+}
+
+.macros {
+  margin: 0 auto;
+  text-align: left;
+  width: 165px;
+}
+
+.calories {
+  color: #00aedb;
+}
+
+.carbs {
+  color: #00b159;
+}
+
+.fat {
+  color: #f37735;
+}
+
+.protein {
+  color: #d11141;
+}
+
+.number {
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+
+

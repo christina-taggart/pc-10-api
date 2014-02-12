@@ -1,28 +1,30 @@
 <div class="container">
   <h2>What are the macronutrients of</h2>
   <form action ="/foods" method="get">
-    <input type="text" name="food" placeholder="milk, apple, banana...">
+    <input type="text" name="food" placeholder="milk, apple, banana..." 
+      <% if @search_term %> value="<%=@search_term %>" <% end %> >
     <button type="submit">Search</button>
-    <select name="results_number">
-      <option selected="selected" value="1">1 result</option>
-      <option value="5">5 results</option>
-      <option value="10">10 results</option>
-    </select>
+    <input type="radio" name="results_number" value="1" checked> 1 result
+    <input type="radio" name="results_number" value="5"> 5 results
+    <input type="radio" name="results_number" value="10"> 10 results
   </form>
 
-  <% if @foods %>
-  <div id="search-results">
+  <% if @foods && !@foods.empty? %>
+    <div id="search-results">
     <% @foods.each do |food| %>
       <div class="food">
-        <h2><%= food.name %></h2>
-        <p class="serving size">Per 100g serving, <%= food.name %> contains:</p>
-        <p class="calories"><%= food.calories %> calories</p>
-        <p class="carbs"><%= food.carbs %>g carbs</p>
-        <p class="fat"><%= food.fat %>g fat</p>
-        <p class="protein"><%= food.protein %>g protein</p>
+        <h2 class="food-name"><%= food.name %></h2>
+        <p class="serving-size">Per 100g serving, <%= food.name %> contain(s):</p>
+        <div class="macros">
+          <p class="calories"><span class="number"><%= food.calories %></span> calories</p>
+          <p class="carbs"><span class="number"><%= food.carbs %></span> g carbs</p>
+          <p class="fat"><span class="number"><%= food.fat %></span> g fat</p>
+          <p class="protein"><span class="number"><%= food.protein %></span> g protein</p>
+        </div>
       </div>
     <% end %>
-
-  </div>
+    </div>
+  <% elsif @foods %>
+    <p class="error">Food not found!</p>
   <% end %>
 </div>
