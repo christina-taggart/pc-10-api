@@ -6,7 +6,7 @@ such profit!
 much amaze!  
 definitely not a ponzi!  
   
-![dogecoin logo](/img/dogecoin-logo.png "To the moon!")
+![dogecoin logo](https://github.com/sea-lions-2014/ph2-p10-ruby-api-s-challenge/blob/rickr/source/api/public/img/dogecoin-logo.png "To the moon!")
 
 ## Dependencies
 ### Using the 'Cryptsy' API  
