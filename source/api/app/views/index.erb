@@ -8,8 +8,12 @@
   <% if @food %>
   <div id="search-results">
     <div class="food">
-      <h2><%= @food["food_name"] %></h2>
-      <p><%= @food["food_description"] %></p>
+      <h2><%= @food.name %></h2>
+      <p class="serving size">Per 100g serving, <%= @food.name %> contains:</p>
+      <p class="calories"><%= @food.calories %> calories</p>
+      <p class="carbs"><%= @food.carbs %>g carbs</p>
+      <p class="fat"><%= @food.fat %>g fat</p>
+      <p class="protein"><%= @food.protein %>g protein</p>
     </div>
   </div>
   <% end %>

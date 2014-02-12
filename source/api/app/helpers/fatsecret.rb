@@ -1,11 +1,30 @@
+# Class to model the nutrition data of a food
+class FoodNutrition
+  attr_accessor :name, :calories, :fat, :carbs, :protein
+
+  def initialize(args)
+    @name = args[:name]
+    @calories = args[:calories]
+    @fat = args[:fat]
+    @carbs = args[:carbs]
+    @protein = args[:protein]
+  end
+end
+
+
 # Class for retrieving and parsing nutrition data using the FatSecret API
 class NutritionGetter
   def self.first_result(food)
     result = FatSecret.search_food(food)["foods"]["food"].first
+    macros = self.parse_description(result["food_description"])
     food = FoodNutrition.new({
         name: result["food_name"],
-
+        calories: macros[:calories],
+        fat: macros[:fat],
+        carbs: macros[:carbs],
+        protein: macros[:protein]
       })
+    food
   end
 
   def self.parse_description(description)
@@ -35,18 +54,5 @@ class NutritionGetter
    def self.getProtein(description)
     match = description.match(/Protein: (\d+.\d+)g/)
     match[1].to_f
-  end
-end
-
-# Class to model the nutrition data of a food
-class FoodNutrition
-  attr_accessor :calories, :fat, :carbs, :protein
-
-  def initialize(args)
-    @name = args[:name]
-    @calories = args[:calories]
-    @fat = args[:fat]
-    @carbs = args[:carbs]
-    @protein = args[:protein]
   end
 end
