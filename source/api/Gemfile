@@ -17,6 +17,8 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'fb_graph'
+gem "koala", "~> 1.8.0rc1"
 
 group :test do
   gem 'shoulda-matchers'
