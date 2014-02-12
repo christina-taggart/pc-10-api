@@ -6,11 +6,6 @@ FlickRaw.shared_secret= "3b0d25df9725a043"
 
 list   = flickr.photos.getRecent
 
-
-
-random = rand(100)
-
-
 get '/' do
 	id = list[0].id
 	secret = list[0].secret
