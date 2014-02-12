@@ -1,4 +1,5 @@
 get '/' do
+  @blob = Github.repos.list user: 'christina-taggart'
   # Look in app/views/index.erb
   erb :index
 end
