@@ -6,7 +6,8 @@ get '/' do
 end
 
 get '/trending' do
-  @results = fetch_trending
+  coords = params[:coords]
+  @results = fetch_trending(coords)
   content_type 'application/json'
   halt 200, { results: @results }.to_json
 

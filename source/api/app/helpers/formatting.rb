@@ -1,7 +1,12 @@
 helpers do
-  def fetch_trending
+  def fetch_trending(coords)
     trending_places = {}
-    CLIENT.trending_venues('37.7833, -122.4167', radius: 2000, limit: 20).venues.each do |venue|
+    coords = coords.join(", ")
+    venues = CLIENT.trending_venues(coords, radius: 10000, limit: 20).venues
+    if venues.length < 10
+      venues = CLIENT.trending_venues(coords, radius: 20000, limit: 20).venues
+    end
+    venues.each do |venue|
       name = venue.name
       location = venue.location
       address = [location.address, location.city, location.state].join(" ")

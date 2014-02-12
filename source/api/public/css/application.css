@@ -5,12 +5,28 @@ html, body, #map-canvas{
 }
 
 #search {
-  position: absolute;
-  z-index: 1;
-  left: 28em;
-  top: 5em;
+  height: 100%;
+  opacity: 0.95;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  z-index: 5000;
 }
 
 #search input{
-  width: 16em;
+  margin: 10em auto 0 auto;
+  width: 19.5em;
+  height: 2em;
+  z-index: 5050;
+  display: block;
+}
+
+#search button{
+  width: 5em;
+  height: 2em;
+  display: block;
+  margin: 2em auto;
+  z-index: 5050;
 }
