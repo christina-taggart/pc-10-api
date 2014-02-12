@@ -1,23 +1,16 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, <%= em("world!") %></p>
+  <h1>How nutritious is</h1>
+  <form action ="/foods" method="get">
+    <input type="text" name="food" placeholder="milk, apple, banana...">
+    <button type="submit">Search</button>
+  </form>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <% if @food %>
+  <div id="search-results">
+    <div class="food">
+      <h2><%= @food["food_name"] %></h2>
+      <p><%= @food["food_description"] %></p>
+    </div>
+  </div>
+  <% end %>
 </div>
