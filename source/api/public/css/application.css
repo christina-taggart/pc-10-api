@@ -1,10 +1,16 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+html, body, #map-canvas{
+  height: 100%;
+  margin: 0;
+  padding:0;
 }
 
-th {
-  text-align: left;
+#search {
+  position: absolute;
+  z-index: 1;
+  left: 28em;
+  top: 5em;
+}
+
+#search input{
+  width: 16em;
 }

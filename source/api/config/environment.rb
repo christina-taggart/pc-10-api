@@ -17,9 +17,9 @@ require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
-
+require 'foursquare2'
 require 'erb'
-
+require 'yaml'
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -43,3 +43,9 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+api_keys = YAML.load_file(APP_ROOT.join('config', 'keys.yml'))
+api_keys.each { |k, v| ENV[k] = v }
+
+CLIENT = Foursquare2::Client.new(api_version: '20140205', :client_id => ENV['CLIENT_ID'],
+  :client_secret => ENV['CLIENT_SECRET'])
