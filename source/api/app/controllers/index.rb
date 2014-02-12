@@ -4,6 +4,6 @@ get '/' do
 end
 
 get '/foods' do
-  @foods = NutritionGetter.first_x_results(params[:food], 5)
+  @foods = NutritionGetter.first_x_results(params[:food], params[:results_number].to_i)
   erb :index
 end

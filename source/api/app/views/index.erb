@@ -3,6 +3,11 @@
   <form action ="/foods" method="get">
     <input type="text" name="food" placeholder="milk, apple, banana...">
     <button type="submit">Search</button>
+    <select name="results_number">
+      <option selected="selected" value="1">1 result</option>
+      <option value="5">5 results</option>
+      <option value="10">10 results</option>
+    </select>
   </form>
 
   <% if @foods %>
