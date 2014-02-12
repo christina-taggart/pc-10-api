@@ -1,5 +1,12 @@
 # CryptSeer.com
-Simple Cryptocoin tools and perhaps more...
+Simple Cryptocoin tools and perhaps more...  
+
+how money!    
+such profit!    
+much amaze!  
+definitely not a ponzi!  
+  
+![dogecoin logo](/img/dogecoin-logo.png "To the moon!")
 
 ## Dependencies
 ### Using the 'Cryptsy' API  
