@@ -16,15 +16,28 @@ end
 class NutritionGetter
   def self.first_result(food)
     result = FatSecret.search_food(food)["foods"]["food"].first
-    macros = self.parse_description(result["food_description"])
-    food = FoodNutrition.new({
-        name: result["food_name"],
+    self.buildFoodNutrition(result)
+  end
+
+  def self.first_x_results(food, number_of_results)
+    results = []
+    number_of_results.times do |index|
+      result = FatSecret.search_food(food)["foods"]["food"][index-1]
+      results << self.buildFoodNutrition(result)
+    end
+    results
+  end
+
+  def self.buildFoodNutrition(search_result)
+    macros = self.parse_description(search_result["food_description"])
+    food_nutrition = FoodNutrition.new({
+        name: search_result["food_name"],
         calories: macros[:calories],
         fat: macros[:fat],
         carbs: macros[:carbs],
         protein: macros[:protein]
       })
-    food
+    food_nutrition
   end
 
   def self.parse_description(description)

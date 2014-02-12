@@ -5,16 +5,19 @@
     <button type="submit">Search</button>
   </form>
 
-  <% if @food %>
+  <% if @foods %>
   <div id="search-results">
-    <div class="food">
-      <h2><%= @food.name %></h2>
-      <p class="serving size">Per 100g serving, <%= @food.name %> contains:</p>
-      <p class="calories"><%= @food.calories %> calories</p>
-      <p class="carbs"><%= @food.carbs %>g carbs</p>
-      <p class="fat"><%= @food.fat %>g fat</p>
-      <p class="protein"><%= @food.protein %>g protein</p>
-    </div>
+    <% @foods.each do |food| %>
+      <div class="food">
+        <h2><%= food.name %></h2>
+        <p class="serving size">Per 100g serving, <%= food.name %> contains:</p>
+        <p class="calories"><%= food.calories %> calories</p>
+        <p class="carbs"><%= food.carbs %>g carbs</p>
+        <p class="fat"><%= food.fat %>g fat</p>
+        <p class="protein"><%= food.protein %>g protein</p>
+      </div>
+    <% end %>
+
   </div>
   <% end %>
 </div>
