@@ -1,15 +1,23 @@
 ## Using the GitHub API
 
-Goals
-- use GitHub API
-- single page app
-- use github_api gem
+### What it does
 
-MVP:
-A user can...
-- search for a GitHub "user" by their username
-- can see the user's Gravatar
-- can see the user's public repos
-- can see the date they joined gitHub
+It its current iteration, this site allows a user to search for a github user by specifying a username.
 
-.... write your tutorial here ....
+The search returns some data about the specified user, including:
+- their name
+- where they live
+- how many followers they have
+- gravatar image
+- a link to their public repos
+
+### How it works
+
+The site currently does not take advantage of any ruby gems to interface with the GitHub API, though they are included in the Gemfile for future extensibility.
+
+All of the data used for the site in its current form can be obtained by submitting a GET request to the GitHub API and specifying a GitHub user.  Here is an example:
+
+```
+curl -X GET "https://api.github.com/users/mh120888"
+```
+
