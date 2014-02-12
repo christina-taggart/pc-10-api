@@ -3,6 +3,7 @@ $(document).ready(function() {
     event.preventDefault();
     $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
       modifyView(response);
+      debugger
     })
     // $.get("https://api.github.com/users/" + $('.username').val() + "/following", function(response) {
     //   debugger
@@ -15,7 +16,7 @@ modifyView = function(response) {
   var newInfo = {
     name: response.name,
     location: response.location,
-    repos_url: response.repos_url,
+    repos_url: "https://github.com/" + response.login + "?tab=repositories",
     followers: response.followers,
     avatar_url: response.avatar_url
   };

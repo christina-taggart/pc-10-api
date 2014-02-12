@@ -2,7 +2,7 @@
 
 ### What it does
 
-It its current iteration, this site allows a user to search for a github user by specifying a username.
+It its current iteration, this site allows you to search for a github user by specifying a username.
 
 The search returns some data about the specified user, including:
 - their name
@@ -21,3 +21,4 @@ All of the data used for the site in its current form can be obtained by submitt
 curl -X GET "https://api.github.com/users/mh120888"
 ```
 
+No sign in or other authentication is required, allowing you to quickly search for a GitHub user (caveat...you do need to sign in to view the user's public repos).
