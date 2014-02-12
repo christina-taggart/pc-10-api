@@ -1,3 +1,14 @@
-Welcome
+<div>
+  <h1>DOGE Last Trade Price</h1>
+  <h3><%= @last_trade_price %> BTC</h3>
+  <h2>Trade Time: <%= @last_trade_time %> EST</h2>
+</div>
+
 
 <button id="doge-btc-market">Get DOGE/BTC Market Info</button>
+
+<div>
+  <br>
+  <br>
+  <%= @market_data %>
+</div>
