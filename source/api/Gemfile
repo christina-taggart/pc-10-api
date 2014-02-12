@@ -18,6 +18,9 @@ gem 'rake'
 
 gem 'shotgun'
 
+# Gems needed for API calls
+gem 'cryptsy-api'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
