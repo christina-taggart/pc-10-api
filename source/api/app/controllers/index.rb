@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-get '/users' do
-  @username = params[:username]
-  redirect "https://api.github.com/users/#{@username}"
-end
+# get '/users' do
+#   @username = params[:username]
+#   redirect "https://api.github.com/users/#{@username}"
+# end

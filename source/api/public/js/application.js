@@ -4,6 +4,9 @@ $(document).ready(function() {
     $.get("https://api.github.com/users/" + $('.username').val(), function(response) {
       modifyView(response);
     })
+    // $.get("https://api.github.com/users/" + $('.username').val() + "/following", function(response) {
+    //   debugger
+    // })
   })
 });
 
@@ -12,8 +15,8 @@ modifyView = function(response) {
   var newInfo = {
     name: response.name,
     location: response.location,
-    bio: response.bio,
-    blog: response.blog,
+    repos_url: response.repos_url,
+    followers: response.followers,
     avatar_url: response.avatar_url
   };
   $('#stalker').append(Mustache.render(template, newInfo));

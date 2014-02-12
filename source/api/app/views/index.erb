@@ -10,9 +10,14 @@
   <div id="stalkee">
     <p>You are now stalking {{name}}!  Here are some things you probably want to know...</p>
     <ul>
-      <li>{{name}} lives in {{location}}!  Is that close to you?</li>
-      <li>{{name}} describes himself (or herself, potentially) like this: {{bio}}</li>
-      <li>Want to see what else {{name}} thinks?  Go <a href="{{blog}}">here</a></li>
+      {{#location}}
+        <li>{{name}} lives in {{location}}!</li>
+      {{/location}}
+      {{^location}}
+        <li>{{name}} doesn't want to tell you where (s)he lives!</li>
+      {{/location}}
+      <li>Check out {{name}}'s repos <a href="{{repos_url}}">here</a></li>
+      <li>{{name}} has {{followers}} followers.</li>
     </ul>
     <img src="{{avatar_url}}">
   </div>
