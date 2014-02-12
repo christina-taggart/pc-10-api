@@ -2,7 +2,7 @@ get '/' do
   # Fatty controller but MVP first, refactor second.
   begin
     cryptsy = Cryptsy::API::Client.new
-    @market_data = cryptsy.marketdata(117) # DOGE is 132 
+    @market_data = cryptsy.marketdata(132) # DOGE is 132 
     # TODO: This should not be run everytime the page is visited
     params[:name] = @market_data["return"]["markets"].keys.first
     params[:description] = @market_data["return"]["markets"]["DOGE"]["label"]
