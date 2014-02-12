@@ -17,7 +17,7 @@ We pull current DOGE/BTC market data from Cryptsy.
 
 With both pieces of data, we can calculate the value of 1 DOGE in terms of USD.  
 
-We save trade, market, and exchange rate data in the database so that we can retrieve data if one of the API fails or their service is overloaded (quite common).  
+We save trade, market, and exchange rate data in the database (saving exch rates is pending TODO) so that we can retrieve data if one of the API fails or their service is overloaded (quite common).  
 
 The code is messy, but the goal is a working MVP by 11-2-14 23:59 PST.  
 
@@ -31,6 +31,12 @@ https://www.cryptsy.com/pages/api
 ### Using Cryptsy-API Ruby gem  
   
 https://github.com/nbarthel/cryptsy-api  
+  
+### Using HTTParty gem
+
+This one is used to make requests to the coinbase api. It's already required by the cryptsy-api gem, but here's the link for reference:  
+  
+https://github.com/jnunemaker/httparty
 
 ### Using Coinbase API  
 

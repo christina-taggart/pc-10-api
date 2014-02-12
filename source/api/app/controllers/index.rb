@@ -2,7 +2,7 @@ get '/' do
   # Fatty controller but MVP first, refactor second.
   begin
     cryptsy = Cryptsy::API::Client.new
-    @market_data = cryptsy.marketdata(132) 
+    @market_data = cryptsy.marketdata(117) # DOGE is 132 
     # TODO: This should not be run everytime the page is visited
     params[:name] = @market_data["return"]["markets"].keys.first
     params[:description] = @market_data["return"]["markets"]["DOGE"]["label"]
@@ -20,9 +20,11 @@ get '/' do
       })
 
     latest_trade = Trade.last    
-    btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
-    @last_trade_price = btc_price_per_coin_display
-    @last_trade_time = latest_trade.executed_at
+    # btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
+    # @last_trade_price = btc_price_per_coin_display
+    # @last_trade_time = latest_trade.executed_at
+
+    @current_btc_spot_price = HTTParty.get('https://coinbase.com/api/v1/prices/spot_rate')["amount"].to_f
 
   rescue Exception => ex  
     # do stuff to prevent a crash from 502 service overload 
@@ -36,9 +38,10 @@ get '/' do
 
     # TODO: This should be DRY'd
     latest_trade = Trade.last    
-    btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
-    @last_trade_price = btc_price_per_coin_display
-    @last_trade_time = latest_trade.executed_at
+    # btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
+    # @last_trade_price = btc_price_per_coin_display
+    # @last_trade_time = latest_trade.executed_at
+    @current_btc_spot_price = HTTParty.get('https://coinbase.com/api/v1/prices/spot_rate')["amount"].to_f
     @secret_fail_msg = ":-)"
   end
 

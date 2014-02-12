@@ -1,14 +1,17 @@
 body {
   background-color: rgb(242, 237, 224);
+  background-image: url('/img/dogecoin-logo.png');
 }
 
 .current-doge-price {
   margin: 20px auto;
   border: 1px solid silver;
-  width: 400px;
+  width: 600px;
   border-radius: 15px;
-  padding: 10px;
+  padding: auto;
   text-align: center;
+  background-color: rgba(186, 159, 51, 0.9);
+  color: rgb(242, 237, 224);
 }
 .container {
   margin: 20px auto;
