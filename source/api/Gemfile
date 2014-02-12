@@ -17,6 +17,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'soundcloud'
 
 group :test do
   gem 'shoulda-matchers'
