@@ -20,9 +20,9 @@ get '/' do
       })
 
     latest_trade = Trade.last    
-    # btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
-    # @last_trade_price = btc_price_per_coin_display
-    # @last_trade_time = latest_trade.executed_at
+    btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
+    @last_trade_price = btc_price_per_coin_display
+    @last_trade_time = latest_trade.executed_at
 
     @current_btc_spot_price = HTTParty.get('https://coinbase.com/api/v1/prices/spot_rate')["amount"].to_f
 
@@ -38,9 +38,9 @@ get '/' do
 
     # TODO: This should be DRY'd
     latest_trade = Trade.last    
-    # btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
-    # @last_trade_price = btc_price_per_coin_display
-    # @last_trade_time = latest_trade.executed_at
+    btc_price_per_coin_display = sprintf("%0.08f", latest_trade.btc_price_per_coin)
+    @last_trade_price = btc_price_per_coin_display
+    @last_trade_time = latest_trade.executed_at
     @current_btc_spot_price = HTTParty.get('https://coinbase.com/api/v1/prices/spot_rate')["amount"].to_f
     @secret_fail_msg = ":-)"
   end
