@@ -21,6 +21,9 @@ gem 'shotgun'
 # Gems needed for API calls
 gem 'cryptsy-api'
 
+# Gem needed for Testing
+gem 'simplecov', :require => false
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
