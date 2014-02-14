@@ -3,7 +3,7 @@
   <h2><%= @last_trade_price %> BTC</h2>
   <h3>As of <%= @last_trade_time %> EST</h3>
   <h2>1 BTC is currently worth <%= "\$#{@current_btc_spot_price}" %></h2>
-  <h2>1 DOGE is currently worth <%= "\$#{@last_trade_price.to_f * @current_btc_spot_price}" %></h2>
+  <h2>1 DOGE is currently worth <%= "\$" + sprintf('%.6f', @last_trade_price.to_f * @current_btc_spot_price) %></h2>
 </div>
 
 <!-- <div>
